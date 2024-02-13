@@ -23,7 +23,9 @@
                   </li>
                 </ul>
               </div>
-              <h1 class="a-spacing-medium a-spacing-top-medium">Your Addresses</h1>
+              <h1 class="a-spacing-medium a-spacing-top-medium">
+                Your Addresses
+              </h1>
               <!-- Message from Server -->
               <div class="a-section a-spacing-none a-spacing-top-small">
                 <b>{{ message }}</b>
@@ -34,7 +36,7 @@
                     <nuxt-link
                       to="/address/add"
                       class="a-link-normal add-new-address-button"
-                      style="text-decoration:none;"
+                      style="text-decoration: none"
                     >
                       <div class="a-box first-desktop-address-tile">
                         <div class="a-box-inner a-padding-extra-large">
@@ -50,7 +52,9 @@
                     v-for="(address, index) in addresses"
                     :key="address._id"
                   >
-                    <div class="a-box a-spacing-none normal-desktop-address-tile">
+                    <div
+                      class="a-box a-spacing-none normal-desktop-address-tile"
+                    >
                       <div class="a-box-inner a-padding-none">
                         <div class="address-section-no-default">
                           <div class="a-spacing-small">
@@ -64,7 +68,10 @@
                               <!-- Address street address -->
                               <li>{{ address.streetAddress }}</li>
                               <!-- Address city state zip code -->
-                              <li>{{ address.city }}, {{ address.state}} {{ address.zipCode }}</li>
+                              <li>
+                                {{ address.city }}, {{ address.state }}
+                                {{ address.zipCode }}
+                              </li>
                               <!-- Address country -->
                               <li>{{ address.country }}</li>
                               <!-- Address Phone number -->
@@ -75,12 +82,18 @@
                       </div>
                       <!-- Update Button -->
                       <div class="edit-address-desktop-link">
-                        <nuxt-link :to="`/address/${address._id}`">Edit</nuxt-link>&nbsp; | &nbsp;
+                        <nuxt-link :to="`/address/${address._id}`"
+                          >Edit</nuxt-link
+                        >&nbsp; | &nbsp;
                         <!-- Delete Button -->
-                        <a href="#" @click="onDeleteAddress(address._id, index)">Delete</a>
+                        <a href="#" @click="onDeleteAddress(address._id, index)"
+                          >Delete</a
+                        >
                         &nbsp; | &nbsp;
                         <!-- Set Address as Default -->
-                        <a href="#" @click="onSetDefault(address._id)">Set as Default</a>
+                        <a href="#" @click="onSetDefault(address._id)"
+                          >Set as Default</a
+                        >
                       </div>
                     </div>
                   </div>
@@ -104,7 +117,7 @@ export default {
       let response = await $axios.$get("/api/addresses");
 
       return {
-        addresses: response.addresses
+        addresses: response.addresses,
       };
     } catch (err) {
       console.log(err);
@@ -112,7 +125,7 @@ export default {
   },
   data() {
     return {
-      message: ""
+      message: "",
     };
   },
   methods: {
@@ -133,7 +146,7 @@ export default {
     async onSetDefault(id) {
       try {
         let response = await this.$axios.$put(`/api/addresses/set/default`, {
-          id: id
+          id: id,
         });
 
         if (response.success) {
@@ -144,10 +157,7 @@ export default {
         this.message = err.message;
         console.log(err);
       }
-    }
-  }
+    },
+  },
 };
 </script>
-
-
-

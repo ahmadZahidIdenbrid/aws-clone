@@ -33,7 +33,10 @@
                 <div>
                   <a href="#">
                     <div class="a-meter 5star">
-                      <div class="a-meter-bar a-meter-filled" style="width: 64%;"></div>
+                      <div
+                        class="a-meter-bar a-meter-filled"
+                        style="width: 64%"
+                      ></div>
                     </div>
                   </a>
                 </div>
@@ -45,7 +48,7 @@
                 </div>
               </div>
             </div>
-            <div class="row a-histogrm-row" style="margin-top: -15px;">
+            <div class="row a-histogrm-row" style="margin-top: -15px">
               <div class="col-md-2 col-sm-2 col-2 pr-0">
                 <div class="aok-nowrap">
                   <a href="#">4 star</a>
@@ -56,7 +59,10 @@
                 <div>
                   <a href="#">
                     <div class="a-meter 5star">
-                      <div class="a-meter-bar a-meter-filled" style="width: 14%;"></div>
+                      <div
+                        class="a-meter-bar a-meter-filled"
+                        style="width: 14%"
+                      ></div>
                     </div>
                   </a>
                 </div>
@@ -68,7 +74,7 @@
                 </div>
               </div>
             </div>
-            <div class="row a-histogrm-row" style="margin-top: -15px;">
+            <div class="row a-histogrm-row" style="margin-top: -15px">
               <div class="col-md-2 col-sm-2 col-2 pr-0">
                 <div class="aok-nowrap">
                   <a href="#">3 star</a>
@@ -79,7 +85,10 @@
                 <div>
                   <a href="#">
                     <div class="a-meter 5star">
-                      <div class="a-meter-bar a-meter-filled" style="width: 4%;"></div>
+                      <div
+                        class="a-meter-bar a-meter-filled"
+                        style="width: 4%"
+                      ></div>
                     </div>
                   </a>
                 </div>
@@ -91,7 +100,7 @@
                 </div>
               </div>
             </div>
-            <div class="row a-histogrm-row" style="margin-top: -15px;">
+            <div class="row a-histogrm-row" style="margin-top: -15px">
               <div class="col-md-2 col-sm-2 col-2 pr-0">
                 <div class="aok-nowrap">
                   <a href="#">2 star</a>
@@ -102,7 +111,10 @@
                 <div>
                   <a href="#">
                     <div class="a-meter 5star">
-                      <div class="a-meter-bar a-meter-filled" style="width: 0%;"></div>
+                      <div
+                        class="a-meter-bar a-meter-filled"
+                        style="width: 0%"
+                      ></div>
                     </div>
                   </a>
                 </div>
@@ -114,7 +126,7 @@
                 </div>
               </div>
             </div>
-            <div class="row a-histogrm-row" style="margin-top: -15px;">
+            <div class="row a-histogrm-row" style="margin-top: -15px">
               <div class="col-md-2 col-sm-2 col-2 pr-0">
                 <div class="aok-nowrap">
                   <a href="#">1 star</a>
@@ -125,7 +137,10 @@
                 <div>
                   <a href="#">
                     <div class="a-meter 5star">
-                      <div class="a-meter-bar a-meter-filled" style="width: 4%;"></div>
+                      <div
+                        class="a-meter-bar a-meter-filled"
+                        style="width: 4%"
+                      ></div>
                     </div>
                   </a>
                 </div>
@@ -144,15 +159,16 @@
             </div>
           </div>
           <h3 class="a-spacing-micro">Review this product</h3>
-          <div class="a-row a-spacing-large">Share your thoughts with other customers</div>
+          <div class="a-row a-spacing-large">
+            Share your thoughts with other customers
+          </div>
           <div class="a-row">
             <!-- Link to another Review page -->
             <span class="a-button-base writeReviewButton cm-cr-button-wide">
               <span class="a-button-inner">
-                <nuxt-link
-                  :to="`/reviews/${product._id}`"
-                  class="a-button-text"
-                >Write a customer review</nuxt-link>
+                <nuxt-link :to="`/reviews/${product._id}`" class="a-button-text"
+                  >Write a customer review</nuxt-link
+                >
               </span>
             </span>
           </div>
@@ -256,7 +272,9 @@
             <div class="card-padding">
               <div class="review-header">
                 <h3>
-                  <span class="a-size-base">Showing 1-8 of {{ product.reviews.length }} reviews</span>
+                  <span class="a-size-base"
+                    >Showing 1-8 of {{ product.reviews.length }} reviews</span
+                  >
                 </h3>
               </div>
               <div class="review-sort-type">
@@ -273,7 +291,11 @@
               </div>
 
               <!-- Reviews -->
-              <div class="review-body" v-for="review in reviews" :key="review._id">
+              <div
+                class="review-body"
+                v-for="review in reviews"
+                :key="review._id"
+              >
                 <div class="genome-widget">
                   <a href="#">
                     <div class="profile-avatar">
@@ -290,7 +312,11 @@
                 <div class="a-row">
                   <!-- Review Star -->
                   <a href="#">
-                    <i class="fas fa-star" v-for="i in review.rating" :key="i"></i>
+                    <i
+                      class="fas fa-star"
+                      v-for="i in review.rating"
+                      :key="i"
+                    ></i>
                   </a>
                   <span class="a-letter-space"></span>
                   <!-- Review Headline -->
@@ -300,7 +326,13 @@
                 <div class="review-data">
                   <span class="a-color-secondary">Format: Hardcover</span>
                   <div
-                    style="width: 1px !important; height: 15px !important; background-color: #ddd; display: inline-block; margin: 0px 5px -3px 5px;"
+                    style="
+                      width: 1px !important;
+                      height: 15px !important;
+                      background-color: #ddd;
+                      display: inline-block;
+                      margin: 0px 5px -3px 5px;
+                    "
                   ></div>
                   <span class="avp-badge a-color-state">Verified Purchase</span>
                 </div>
@@ -310,7 +342,9 @@
                 </div>
                 <div class="review-comments">
                   <div class="a-spacing-small">
-                    <span class="a-size-base a-color-tertiary">60 people found this helpful</span>
+                    <span class="a-size-base a-color-tertiary"
+                      >60 people found this helpful</span
+                    >
                   </div>
                   <div class="cr-helpful-button">
                     <span class="a-button-base">
@@ -328,13 +362,17 @@
           </div>
           <div class="review-footer">
             <div class="a-row">
-              <span class="a-button a-button-base writeReviewButton" id="a-autoid-15">
+              <span
+                class="a-button a-button-base writeReviewButton"
+                id="a-autoid-15"
+              >
                 <span class="a-button-inner">
                   <nuxt-link
                     :to="`/reviews/${product._id}`"
                     class="a-button-text"
                     role="button"
-                  >Write a customer review</nuxt-link>
+                    >Write a customer review</nuxt-link
+                  >
                 </span>
               </span>
             </div>
@@ -348,6 +386,6 @@
 
 <script>
 export default {
-  props: ["product", "reviews"]
+  props: ["product", "reviews"],
 };
 </script>

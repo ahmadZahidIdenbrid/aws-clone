@@ -16,7 +16,9 @@
                 <h1 class="a-spacing-small">Create account</h1>
                 <!-- Your Name -->
                 <div class="a-row a-spacing-base">
-                  <label for="ap_customer_name" class="a-form-label">Your name</label>
+                  <label for="ap_customer_name" class="a-form-label"
+                    >Your name</label
+                  >
                   <input
                     type="text"
                     id="ap_customer_name"
@@ -26,7 +28,9 @@
                 </div>
                 <!-- Email -->
                 <div class="a-row a-spacing-base">
-                  <label for="ap_customer_name" class="a-form-label">Email</label>
+                  <label for="ap_customer_name" class="a-form-label"
+                    >Email</label
+                  >
                   <input
                     type="email"
                     id="ap_customer_name"
@@ -36,7 +40,9 @@
                 </div>
                 <!-- Password -->
                 <div class="a-row a-spacing-base">
-                  <label for="ap_customer_name" class="a-form-label">Password</label>
+                  <label for="ap_customer_name" class="a-form-label"
+                    >Password</label
+                  >
                   <input
                     type="password"
                     id="ap_customer_name"
@@ -44,14 +50,18 @@
                     v-model="password"
                   />
                   <div class="a-alert-container">
-                    <div class="a-alert-content">Password must be at least 6 characteres</div>
+                    <div class="a-alert-content">
+                      Password must be at least 6 characteres
+                    </div>
                   </div>
                 </div>
                 <!-- Button -->
                 <div class="a-row a-spacing-extra-large mb-4">
                   <span class="a-button-primary">
                     <span class="a-button-inner">
-                      <span class="a-button-text" @click="onSignup">Create your Amazon account</span>
+                      <span class="a-button-text" @click="onSignup"
+                        >Create your Amazon account</span
+                      >
                     </span>
                   </span>
                   <div class="a-row a-spacing-top-medium a-size-small">
@@ -66,7 +76,9 @@
                 <div class="a-row">
                   <b>
                     Already have an account?
-                    <nuxt-link to="/login" class="a-link-emphasis">Sign in</nuxt-link>
+                    <nuxt-link to="/login" class="a-link-emphasis"
+                      >Sign in</nuxt-link
+                    >
                   </b>
                 </div>
               </div>
@@ -87,7 +99,7 @@ export default {
     return {
       name: "",
       email: "",
-      password: ""
+      password: "",
     };
   },
   methods: {
@@ -96,7 +108,7 @@ export default {
         let data = {
           name: this.name,
           email: this.email,
-          password: this.password
+          password: this.password,
         };
 
         let response = await this.$axios.$post("/api/auth/signup", data);
@@ -107,8 +119,8 @@ export default {
           this.$auth.loginWith("local", {
             data: {
               email: this.email,
-              password: this.password
-            }
+              password: this.password,
+            },
           });
 
           this.$router.push("/");
@@ -116,7 +128,7 @@ export default {
       } catch (err) {
         console.log(err);
       }
-    }
-  }
+    },
+  },
 };
 </script>

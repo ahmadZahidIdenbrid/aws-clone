@@ -3,12 +3,12 @@ export const state = () => ({
   cart: [],
   cartLength: 0,
   shippingPrice: 0,
-  shippingEstimatedDelivery: ""
+  shippingEstimatedDelivery: "",
 });
 
 export const actions = {
   addProductToCart({ state, commit }, product) {
-    const cartProduct = state.cart.find(prod => prod._id === product._id);
+    const cartProduct = state.cart.find((prod) => prod._id === product._id);
 
     if (!cartProduct) {
       commit("pushProductToCart", product);
@@ -17,7 +17,7 @@ export const actions = {
     }
 
     commit("incrementCartLength");
-  }
+  },
 };
 
 export const mutations = {
@@ -35,7 +35,7 @@ export const mutations = {
   incrementCartLength(state) {
     state.cartLength = 0;
     if (state.cart.length > 0) {
-      state.cart.map(product => {
+      state.cart.map((product) => {
         state.cartLength += product.quantity;
       });
     }
@@ -48,12 +48,12 @@ export const mutations = {
 
   */
   changeQty(state, { product, qty }) {
-    let cartProduct = state.cart.find(prod => prod._id === product._id);
+    let cartProduct = state.cart.find((prod) => prod._id === product._id);
     cartProduct.quantity = qty;
 
     state.cartLength = 0;
     if (state.cart.length > 0) {
-      state.cart.map(product => {
+      state.cart.map((product) => {
         state.cartLength += product.quantity;
       });
     }
@@ -83,7 +83,7 @@ export const mutations = {
     state.cartLength = 0;
     state.shippingPrice = 0;
     state.shippingEstimatedDelivery = "";
-  }
+  },
 };
 
 export const getters = {
@@ -95,7 +95,7 @@ export const getters = {
   },
   getCartTotalPrice(state) {
     let total = 0;
-    state.cart.map(product => {
+    state.cart.map((product) => {
       total += product.price * product.quantity;
     });
 
@@ -103,7 +103,7 @@ export const getters = {
   },
   getCartTotalPriceWithShipping(state) {
     let total = 0;
-    state.cart.map(product => {
+    state.cart.map((product) => {
       total += product.price * product.quantity;
     });
 
@@ -111,5 +111,5 @@ export const getters = {
   },
   getEstimatedDelivery(state) {
     return state.shippingEstimatedDelivery;
-  }
+  },
 };

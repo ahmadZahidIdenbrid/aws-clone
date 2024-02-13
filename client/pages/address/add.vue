@@ -34,10 +34,10 @@
               <h2>Add a new address</h2>
               <div class="a-section a-spacing-none a-spacing-top-small">
                 <b>
-                  Or pick up your packages at your convenience from our self-service locations. To add an Amazon Pickup Point or Locker, click
-                  <a
-                    href="#"
-                  >here</a>.
+                  Or pick up your packages at your convenience from our
+                  self-service locations. To add an Amazon Pickup Point or
+                  Locker, click
+                  <a href="#">here</a>.
                 </b>
               </div>
               <!-- Error Message -->
@@ -48,28 +48,35 @@
                 <div class="a-spacing-medium a-spacing-top-medium">
                   <!-- Country / Region -->
                   <div class="a-spacing-top-medium">
-                    <label style="margin-bottom: 0px;">Country/Region</label>
+                    <label style="margin-bottom: 0px">Country/Region</label>
                     <select class="a-select-option" v-model="country">
                       <option
                         v-for="country in countries"
                         :key="country.alpha2Code"
                         :value="country.name"
-                      >{{ country.name }}</option>
+                      >
+                        {{ country.name }}
+                      </option>
                       <option></option>
                     </select>
                   </div>
                   <!-- Full name -->
                   <div class="a-spacing-top-medium">
-                    <label style="margin-bottom: 0px;">Full Name</label>
-                    <input type="text" class="a-input-text" style="width: 100%;" v-model="fullName" />
-                  </div>
-                  <!-- Street Address -->
-                  <div class="a-spacing-top-medium">
-                    <label style="margin-bottom: 0px;">Street Address</label>
+                    <label style="margin-bottom: 0px">Full Name</label>
                     <input
                       type="text"
                       class="a-input-text"
-                      style="width: 100%;"
+                      style="width: 100%"
+                      v-model="fullName"
+                    />
+                  </div>
+                  <!-- Street Address -->
+                  <div class="a-spacing-top-medium">
+                    <label style="margin-bottom: 0px">Street Address</label>
+                    <input
+                      type="text"
+                      class="a-input-text"
+                      style="width: 100%"
                       placeholder="Street and number, P.O. box, c/o."
                       v-model="streetAddress1"
                     />
@@ -77,37 +84,56 @@
                     <input
                       type="text"
                       class="a-input-text a-spacing-top-small"
-                      style="width: 100%;"
+                      style="width: 100%"
                       placeholder="Apartment, suite, unit, building, floor, etc."
                       v-model="streetAddress2"
                     />
                   </div>
                   <!-- City -->
                   <div class="a-spacing-top-medium">
-                    <label style="margin-bottom: 0px;">City</label>
-                    <input type="text" class="a-input-text" style="width: 100%;" v-model="city" />
-                  </div>
-                  <!-- State -->
-                  <div class="a-spacing-top-medium">
-                    <label style="margin-bottom: 0px;">State / Province / Region</label>
-                    <input type="text" class="a-input-text" style="width: 100%;" v-model="state" />
-                  </div>
-                  <!-- Zip Code -->
-                  <div class="a-spacing-top-medium">
-                    <label style="margin-bottom: 0px;">Zip Code</label>
-                    <input type="text" class="a-input-text" style="width: 100%;" v-model="zipCode" />
-                  </div>
-                  <!-- Phone Number -->
-                  <div class="a-spacing-top-medium">
-                    <label style="margin-bottom: 0px;">Phone Number</label>
+                    <label style="margin-bottom: 0px">City</label>
                     <input
                       type="text"
                       class="a-input-text"
-                      style="width: 100%;"
+                      style="width: 100%"
+                      v-model="city"
+                    />
+                  </div>
+                  <!-- State -->
+                  <div class="a-spacing-top-medium">
+                    <label style="margin-bottom: 0px"
+                      >State / Province / Region</label
+                    >
+                    <input
+                      type="text"
+                      class="a-input-text"
+                      style="width: 100%"
+                      v-model="state"
+                    />
+                  </div>
+                  <!-- Zip Code -->
+                  <div class="a-spacing-top-medium">
+                    <label style="margin-bottom: 0px">Zip Code</label>
+                    <input
+                      type="text"
+                      class="a-input-text"
+                      style="width: 100%"
+                      v-model="zipCode"
+                    />
+                  </div>
+                  <!-- Phone Number -->
+                  <div class="a-spacing-top-medium">
+                    <label style="margin-bottom: 0px">Phone Number</label>
+                    <input
+                      type="text"
+                      class="a-input-text"
+                      style="width: 100%"
                       v-model="phoneNumber"
                     />
                     <div class="a-section a-spacing-none a-spacing-top-micro">
-                      <span class="a-size-mini">May be used to assist delivery</span>
+                      <span class="a-size-mini"
+                        >May be used to assist delivery</span
+                      >
                     </div>
                   </div>
                   <div class="a-spacing-base a-spacing-top-medium">
@@ -115,32 +141,35 @@
                   </div>
                   <!-- Delivery Instruction -->
                   <div class="a-spacing-top-medium">
-                    <label
-                      style="margin-bottom: 0px;"
-                    >Do we need additional instructions to find this address?</label>
+                    <label style="margin-bottom: 0px"
+                      >Do we need additional instructions to find this
+                      address?</label
+                    >
                     <textarea
                       placeholder="Provide details such as building description, a nearby landmark, or other navigation instructions"
-                      style="height:6em; width: 100%;"
+                      style="height: 6em; width: 100%"
                       v-model="deliveryInstructions"
                     ></textarea>
                   </div>
                   <!-- Security code -->
                   <div class="a-spacing-top-medium">
-                    <label
-                      style="margin-bottom: 0px;"
-                    >Do we need a security code or a call box number to access this building?</label>
+                    <label style="margin-bottom: 0px"
+                      >Do we need a security code or a call box number to access
+                      this building?</label
+                    >
                     <input
                       type="text"
                       class="a-input-text"
-                      style="width: 100%;"
+                      style="width: 100%"
                       placeholder="1234"
                       v-model="securityCode"
                     />
                   </div>
                   <div class="a-spacing-top-medium">
-                    <label style="margin-bottom: 0px;">Weekend delivery</label>
+                    <label style="margin-bottom: 0px">Weekend delivery</label>
                     <a href="#">
-                      <i class="fas fa-angle-down"></i> Which days can you receive packages?
+                      <i class="fas fa-angle-down"></i> Which days can you
+                      receive packages?
                     </a>
                   </div>
                   <div class="a-spacing-top-medium"></div>
@@ -151,7 +180,10 @@
                     </span>
                   </div>
                   <div>
-                    <span>If the address contains typos or other errors, your package may be undeliverable.</span>
+                    <span
+                      >If the address contains typos or other errors, your
+                      package may be undeliverable.</span
+                    >
                   </div>
                   <div class="a-spacing-top-small">
                     <span>
@@ -165,7 +197,9 @@
                   <div class="a-spacing-top-large">
                     <span class="a-button-register">
                       <span class="a-button-inner">
-                        <span class="a-button-text" @click="onAddAddress">Add address</span>
+                        <span class="a-button-text" @click="onAddAddress"
+                          >Add address</span
+                        >
                       </span>
                     </span>
                   </div>
@@ -189,7 +223,7 @@ export default {
       let response = await $axios.$get("/api/countries");
 
       return {
-        countries: response
+        countries: response,
       };
     } catch (err) {
       console.log(err);
@@ -207,7 +241,7 @@ export default {
       zipCode: "",
       phoneNumber: "",
       deliveryInstructions: "",
-      securityCode: ""
+      securityCode: "",
     };
   },
 
@@ -223,7 +257,7 @@ export default {
           zipCode: this.zipCode,
           phoneNumber: this.phoneNumber,
           deliverInstructions: this.deliveryInstructions,
-          securityCode: this.securityCode
+          securityCode: this.securityCode,
         };
 
         let response = await this.$axios.$post("/api/addresses", data);
@@ -234,7 +268,7 @@ export default {
       } catch (err) {
         console.log(err);
       }
-    }
-  }
+    },
+  },
 };
 </script>

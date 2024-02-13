@@ -30,7 +30,7 @@
                         <a href="#">
                           <img
                             :src="product.photo"
-                            style="width: 150px;"
+                            style="width: 150px"
                             class="img-fluid"
                           />
                         </a>
@@ -133,26 +133,8 @@
                                   :read-only="true"
                                   :star-size="18"
                                   :star-points="[
-                                    23,
-                                    2,
-                                    14,
-                                    17,
-                                    0,
-                                    19,
-                                    10,
-                                    34,
-                                    7,
-                                    50,
-                                    23,
-                                    43,
-                                    38,
-                                    50,
-                                    36,
-                                    34,
-                                    46,
-                                    19,
-                                    31,
-                                    17
+                                    23, 2, 14, 17, 0, 19, 10, 34, 7, 50, 23, 43,
+                                    38, 50, 36, 34, 46, 19, 31, 17,
                                   ]"
                                 ></star-rating>
                               </no-ssr>
@@ -177,7 +159,7 @@ import StarRating from "vue-star-rating";
 
 export default {
   components: {
-    StarRating
+    StarRating,
   },
   watchQuery: ["title"],
 
@@ -186,11 +168,11 @@ export default {
       let products = await $axios.$post("/api/search", { title: query.title });
 
       return {
-        products
+        products,
       };
     } catch (err) {
       console.log(err);
     }
-  }
+  },
 };
 </script>

@@ -23,7 +23,9 @@
           <div class="bx-root-dtls">
             <div class="bx-root-heading">The Program</div>
           </div>
-          <div class="bx-root-subtext">Inside the Mind of the legendary Author JK Rowling</div>
+          <div class="bx-root-subtext">
+            Inside the Mind of the legendary Author JK Rowling
+          </div>
           <div class="bx-root-link">
             <span>Order Now</span>
           </div>

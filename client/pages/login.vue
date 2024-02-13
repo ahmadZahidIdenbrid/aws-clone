@@ -16,7 +16,9 @@
                 <h1 class="a-spacing-small">Sign In</h1>
                 <!-- Email -->
                 <div class="a-row a-spacing-base">
-                  <label for="ap_customer_name" class="a-form-label">Email</label>
+                  <label for="ap_customer_name" class="a-form-label"
+                    >Email</label
+                  >
                   <input
                     type="email"
                     id="ap_customer_name"
@@ -26,7 +28,9 @@
                 </div>
                 <!-- Password -->
                 <div class="a-row a-spacing-base">
-                  <label for="ap_customer_name" class="a-form-label">Password</label>
+                  <label for="ap_customer_name" class="a-form-label"
+                    >Password</label
+                  >
                   <input
                     type="password"
                     id="ap_customer_name"
@@ -34,14 +38,18 @@
                     v-model="password"
                   />
                   <div class="a-alert-container">
-                    <div class="a-alert-content">Password must be at least 6 characteres</div>
+                    <div class="a-alert-content">
+                      Password must be at least 6 characteres
+                    </div>
                   </div>
                 </div>
                 <!-- Button -->
                 <div class="a-row a-spacing-extra-large mb-4">
                   <span class="a-button-primary">
                     <span class="a-button-inner">
-                      <span class="a-button-text" @click="onLogin">Continue</span>
+                      <span class="a-button-text" @click="onLogin"
+                        >Continue</span
+                      >
                     </span>
                   </span>
                   <div class="a-row a-spacing-top-medium a-size-small">
@@ -56,7 +64,9 @@
                 <div class="a-row">
                   <b>
                     Don't have an account?
-                    <nuxt-link to="/signup" class="a-link-emphasis">Signup</nuxt-link>
+                    <nuxt-link to="/signup" class="a-link-emphasis"
+                      >Signup</nuxt-link
+                    >
                   </b>
                 </div>
               </div>
@@ -76,7 +86,7 @@ export default {
   data() {
     return {
       email: "",
-      password: ""
+      password: "",
     };
   },
   methods: {
@@ -85,15 +95,15 @@ export default {
         this.$auth.loginWith("local", {
           data: {
             email: this.email,
-            password: this.password
-          }
+            password: this.password,
+          },
         });
 
         this.$router.push("/");
       } catch (err) {
         console.log(err);
       }
-    }
-  }
+    },
+  },
 };
 </script>

@@ -58,14 +58,19 @@
                     </span>
                   </div>
                   <div>
-                    <span>If the address contains typos or other errors, your package may be undeliverable.</span>
+                    <span
+                      >If the address contains typos or other errors, your
+                      package may be undeliverable.</span
+                    >
                   </div>
 
                   <!-- Purchase Button -->
                   <div class="a-spacing-top-large">
                     <span class="a-button-register">
                       <span class="a-button-inner">
-                        <span @click="onPurchase" class="a-button-text">Purchase</span>
+                        <span @click="onPurchase" class="a-button-text"
+                          >Purchase</span
+                        >
                       </span>
                     </span>
                   </div>
@@ -89,15 +94,15 @@ export default {
     return {
       error: "",
       stripe: null,
-      card: null
+      card: null,
     };
   },
   computed: {
     ...mapGetters([
       "getCart",
       "getCartTotalPriceWithShipping",
-      "getEstimatedDelivery"
-    ])
+      "getEstimatedDelivery",
+    ]),
   },
   mounted() {
     this.stripe = Stripe("pk_test_gtoOkZoPsG41rkbcbbgnEQj900vjxcZJBd");
@@ -113,7 +118,7 @@ export default {
           token: token,
           totalPrice: this.getCartTotalPriceWithShipping,
           cart: this.getCart,
-          estimatedDelivery: this.getEstimatedDelivery
+          estimatedDelivery: this.getEstimatedDelivery,
         });
 
         if (response.success) {
@@ -124,11 +129,10 @@ export default {
       } catch (err) {
         console.log(err);
       }
-    }
-  }
+    },
+  },
 };
 </script>
-
 
 <style>
 .StripeElement {

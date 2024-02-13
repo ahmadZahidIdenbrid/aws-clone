@@ -2,7 +2,7 @@
   "name": "admin",
   "version": "1.0.0",
   "description": "My polished Nuxt.js project",
-  "author": "Alfa",
+  "author": "Ahmad Zahid",
   "private": true,
   "scripts": {
     "dev": "nuxt",

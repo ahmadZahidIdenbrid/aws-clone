@@ -1,6 +1,6 @@
 <template>
   <div>
-    <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
       <symbol
         xmlns="http://www.w3.org/2000/svg"
         id="sbx-icon-search-11"
@@ -66,7 +66,7 @@
 export default {
   data() {
     return {
-      query: ""
+      query: "",
     };
   },
 
@@ -74,9 +74,9 @@ export default {
     onSearch() {
       this.$router.push({
         path: "/search",
-        query: { title: this.query }
+        query: { title: this.query },
       });
-    }
-  }
+    },
+  },
 };
 </script>
